@@ -18,15 +18,17 @@ namespace RestfulAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<AppUser>> GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            return await _user.GetAll();
+            var user =  await _user.GetAll();
+            return Ok(user);
         }
 
         [HttpGet("{id}")]
-        public async Task<AppUser> GetUser(int id)
+        public async Task<IActionResult> GetUser(int id)
         {
-            return await _user.GetById(id);
+            var user = await _user.GetById(id);
+            return Ok(user);
         }
     }
 }
