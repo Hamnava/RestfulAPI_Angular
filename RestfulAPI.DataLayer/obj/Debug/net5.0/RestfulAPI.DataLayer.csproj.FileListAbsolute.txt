@@ -1,0 +1,15 @@
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\bin\Debug\net5.0\RestfulAPI.DataLayer.deps.json
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\bin\Debug\net5.0\RestfulAPI.DataLayer.runtimeconfig.json
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\bin\Debug\net5.0\RestfulAPI.DataLayer.runtimeconfig.dev.json
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\bin\Debug\net5.0\RestfulAPI.DataLayer.dll
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\bin\Debug\net5.0\ref\RestfulAPI.DataLayer.dll
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\bin\Debug\net5.0\RestfulAPI.DataLayer.pdb
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.csproj.AssemblyReference.cache
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.AssemblyInfoInputs.cache
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.AssemblyInfo.cs
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.csproj.CoreCompileInputs.cache
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.dll
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\ref\RestfulAPI.DataLayer.dll
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.pdb
+D:\Projects\RestfulAPI\RestfulAPI.DataLayer\obj\Debug\net5.0\RestfulAPI.DataLayer.genruntimeconfig.cache
