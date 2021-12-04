@@ -9,7 +9,10 @@ namespace RestfulAPI.DataLayer.Entities
     public class AppUser
     {
         public int Id { get; set; }
+        public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public byte[] passwordHash { get; set; }
+        public byte[] passwordSalt { get; set; }
     }
 }

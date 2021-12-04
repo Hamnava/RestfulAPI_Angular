@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace RestfulAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UsersController : ControllerBase
+   
+    public class UsersController : BaseAPIController
     {
         private readonly IUserService _user;
         public UsersController(IUserService user)

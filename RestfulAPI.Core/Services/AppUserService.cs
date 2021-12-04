@@ -18,6 +18,19 @@ namespace RestfulAPI.Core.Services
         {
             _context = context;
         }
+
+        public async Task<int> AddUser(AppUser user)
+        {
+            _context.Users.Add(user);
+           await _context.SaveChangesAsync();
+            return user.Id;
+        }
+
+        public async Task<bool> ExistUsername(string username)
+        {
+            return await _context.Users.AnyAsync(u => u.Username == username.ToLower());
+        }
+
         public async Task<List<AppUser>> GetAll()
         {
             return await _context.Users.ToListAsync();

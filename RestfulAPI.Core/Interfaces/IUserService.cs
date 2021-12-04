@@ -11,5 +11,7 @@ namespace RestfulAPI.Core.Interfaces
     {
         Task<List<AppUser>> GetAll();
         Task<AppUser> GetById(int id);
+        Task<int> AddUser(AppUser user);
+        Task<bool> ExistUsername(string username);
     }
 }
