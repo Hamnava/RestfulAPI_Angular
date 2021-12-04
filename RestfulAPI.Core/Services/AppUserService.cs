@@ -26,6 +26,13 @@ namespace RestfulAPI.Core.Services
             return user.Id;
         }
 
+      
+
+        public async Task<AppUser> ExistUser(string username)
+        {
+            return await _context.Users.SingleOrDefaultAsync(x => x.Username == username);
+        }
+
         public async Task<bool> ExistUsername(string username)
         {
             return await _context.Users.AnyAsync(u => u.Username == username.ToLower());
@@ -40,5 +47,7 @@ namespace RestfulAPI.Core.Services
         {
             return await _context.Users.FindAsync(id);
         }
+
+       
     }
 }

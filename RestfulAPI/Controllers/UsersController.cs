@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RestfulAPI.Core.Interfaces;
 using RestfulAPI.DataLayer.Entities;
@@ -17,6 +18,7 @@ namespace RestfulAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetUsers()
         {
             var user =  await _user.GetAll();
@@ -24,6 +26,7 @@ namespace RestfulAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetUser(int id)
         {
             var user = await _user.GetById(id);

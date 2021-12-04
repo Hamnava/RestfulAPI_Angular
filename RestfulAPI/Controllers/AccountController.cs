@@ -12,13 +12,15 @@ namespace RestfulAPI.Controllers
     public class AccountController : BaseAPIController
     {
         private readonly IUserService _user;
-        public AccountController(IUserService user)
+        private readonly ITokenuser _tokenuser;
+        public AccountController(IUserService user, ITokenuser token)
         {
             _user = user;
+            _tokenuser = token;
         }
-
+        /********* Regisete part *******/
         [HttpPost("register")]
-        public async Task<IActionResult> AddUser(RegisterViewModel viewModel)
+        public async Task<ActionResult<UserViewModel>> AddUser(RegisterViewModel viewModel)
         {
             if (await _user.ExistUsername(viewModel.Username))
             {
@@ -37,9 +39,36 @@ namespace RestfulAPI.Controllers
             };
             await _user.AddUser(user);
 
-            return Ok(user);
+            return new UserViewModel
+            {
+                Username = viewModel.Username,
+                Token = _tokenuser.CreateToken(user)
+            };
         }
 
+        /********* Login part *********/
+        [HttpPost("Login")]
+        public async Task<ActionResult<UserViewModel>> Login(LoginViewModel viewModel)
+        {
+            var User =await _user.ExistUser(viewModel.Username);
+            if (User == null) return Unauthorized("Notfound username");
+
+            using var hmac = new HMACSHA512(User.passwordSalt);
+            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(viewModel.Password));
+            for (int i = 0; i < computedHash.Length; i++)
+            {
+                if (computedHash[i] != User.passwordHash[i])
+                {
+                    return Unauthorized("Invalid password!!!");
+                }
+            }
+            return new UserViewModel
+            {
+                Username = viewModel.Username,
+                Token = _tokenuser.CreateToken(User)
+            };
+
+        }
         
     }
 }

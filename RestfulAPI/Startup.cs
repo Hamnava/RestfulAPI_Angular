@@ -16,6 +16,9 @@ using RestfulAPI.DataLayer.Context;
 using ApplicationContext = RestfulAPI.DataLayer.Context.ApplicationContext;
 using RestfulAPI.Core.Interfaces;
 using RestfulAPI.Core.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace RestfulAPI
 {
@@ -37,7 +40,22 @@ namespace RestfulAPI
             });
 
 
-            services.AddTransient<IUserService, AppUserService>();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["TokenKey"])),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+                
+
+
+            services.AddScoped<IUserService, AppUserService>();
+            services.AddScoped<ITokenuser, Tokenuser>();
 
             services.AddControllers();
 
@@ -64,7 +82,7 @@ namespace RestfulAPI
             app.UseRouting();
 
             app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

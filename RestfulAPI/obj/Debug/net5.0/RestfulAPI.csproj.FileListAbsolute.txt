@@ -39,7 +39,6 @@ D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Loggi
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\System.Runtime.Caching.dll
@@ -60,3 +59,4 @@ D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\RestfulAPI.Core.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\RestfulAPI.DataLayer.dll
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\RestfulAPI.Core.pdb
 D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\RestfulAPI.DataLayer.pdb
+D:\Projects\RestfulAPI\RestfulAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
