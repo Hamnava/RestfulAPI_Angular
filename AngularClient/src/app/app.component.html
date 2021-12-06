@@ -1,9 +1,9 @@
-<h1>{{title}}</h1>
-<i style="font-size: 40px;" class="fa fa-user"></i>
-<div>
+<app-nav></app-nav>
+
+<div class="container mt-5">
   <ul>
     <li *ngFor='let user of users'>
-      {{user.id}} -- {{user.firstName}} - {{user.lastName}}
+      {{user.id}} -- {{user.firstName}} - {{user.lastName}} ---> Username : {{user.username}}
     </li>
   </ul>
 </div>
