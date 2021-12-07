@@ -1,22 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Dating App</a>
+    <a class="navbar-brand" routerLink="/">Dating App</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul *ngIf="accountService.currentUser$ | async" class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Matches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lists</a>
-        </li>
+      <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ng-container *ngIf="accountService.currentUser$ | async">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/members">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link " href="#">Messages</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" (click)="LogOut()">LogOut</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLinkActive="active" routerLink="messages">Messages</a>
+          </li>
+        </ng-container>
       </ul>
 
 <div style="margin-left: 60%;">
