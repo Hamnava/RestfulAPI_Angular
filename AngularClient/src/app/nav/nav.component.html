@@ -18,12 +18,12 @@
         </ng-container>
       </ul>
 
-<div style="margin-left: 60%;">
+<div >
 
 <!-- Depends on dropdown -->
-  <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
+  <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
     <button dropdownToggle class="btn text-light dropdown-toggle" type="button" >
-      Welcome User
+      Welcome {{user.username | titlecase}}
     </button>
     <ul class="dropdown-menu" *dropdownMenu>
       <li><button class="dropdown-item" type="button">Edit User</button></li>
