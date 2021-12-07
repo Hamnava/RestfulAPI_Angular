@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="#">Dating App</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul *ngIf="LogedIn" class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul *ngIf="accountService.currentUser$ | async" class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="#">Matches</a>
         </li>
@@ -22,7 +22,7 @@
 <div style="margin-left: 60%;">
 
 <!-- Depends on dropdown -->
-  <div class="dropdown" *ngIf="LogedIn" dropdown>
+  <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
     <button dropdownToggle class="btn text-light dropdown-toggle" type="button" >
       Welcome User
     </button>
@@ -35,7 +35,7 @@
   </div>
 
 <!-- Depends on Form Login -->
-  <form *ngIf="!LogedIn" #loginForm="ngForm" class="d-flex"  (ngSubmit)="login()" autocomplete="off" >
+  <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex"  (ngSubmit)="login()" autocomplete="off" >
     <input
         name="username"
         [(ngModel)]="model.username"
